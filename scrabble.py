@@ -10,7 +10,7 @@ import random
 
 #Bot configuration
 
-TOKEN = "ODgxMzA5NjE1MzY1NjkzNDUy.Gm7YqU.R8DyTW6-hycjSa9YYO7Wz0C6JHqqv-UPlZKkOA"
+TOKEN = "put your token here"
 
 bot = commands.Bot(command_prefix='k!', intents = discord.Intents.all())
 
