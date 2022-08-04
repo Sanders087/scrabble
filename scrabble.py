@@ -10,7 +10,7 @@ import random
 
 #Bot configuration
 
-TOKEN = "enter your discord bot token"
+TOKEN = "ODgxMzA5NjE1MzY1NjkzNDUy.Gm7YqU.R8DyTW6-hycjSa9YYO7Wz0C6JHqqv-UPlZKkOA"
 
 bot = commands.Bot(command_prefix='k!', intents = discord.Intents.all())
 
@@ -31,7 +31,7 @@ async def scrabble(ctx, phrase, scrnum, channel : discord.TextChannel, language)
     await ctx.message.delete()
     final_phrase = phrase
     def check(m):
-        return m.content.lower() == final_phrase.lower()
+        return m.content.lower() == final_phrase.lower() and m.channel.id == channel.id
     phrase = randomize_letters(phrase).split()
     ballsforquest = 0
     wordscount = len(phrase)
@@ -95,7 +95,7 @@ async def scrabble(ctx, phrase, scrnum, channel : discord.TextChannel, language)
 @commands.has_any_role("Events MC")
 async def question(ctx, question, answer, channel : discord.TextChannel, language):
     def check(m):
-        return m.content.lower() == answer.lower()
+        return m.content.lower() == answer.lower() and m.channel.id == channel.id
     await ctx.message.delete()
     wordscount = len(answer.split())
     if len(answer.split()) == 3:
